@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+class TelephoneBill {
+    string Name, Address, TelNo;
+    int NoOfCalls;
+
+public:
+    void input() {
+        cout << "Name: ";
+        getline(cin, Name);
+        cout << "Address: ";
+        getline(cin, Address);
+        cout << "Telephone No.: ";
+        getline(cin, TelNo);
+        cout << "Number of Calls: ";
+        cin >> NoOfCalls;
+    }
+
+    void display() {
+        cout << "Name: " << Name << endl;
+        cout << "Address: " << Address << endl;
+        cout << "Telephone No.: " << TelNo << endl;
+        cout << "Number of Calls: " << NoOfCalls << endl;
+    }
+
+    friend void calculateAmount(TelephoneBill b);
+};
+
+void calculateAmount(TelephoneBill b) {
+    int amount = b.NoOfCalls * 2;
+    cout << "Amount to pay: Rs. " << amount << endl;
+}
+
+int main() {
+    TelephoneBill bill;
+    bill.input();
+    bill.display();
+    calculateAmount(bill);
+    return 0;
+}
