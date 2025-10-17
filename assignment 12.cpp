@@ -10,7 +10,7 @@ float price;
 
 class shipping_details {
 public:
-float shipping_charge = 5.99;
+float shipping_charge = 10.99;
 };
 
 class bill : public online_shopping,public shipping_details {
