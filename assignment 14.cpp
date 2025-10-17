@@ -53,7 +53,7 @@ public:
 
 int main() {
     Result r;
-    r.setStudent("Alice", 101, "CSE");
+    r.setStudent("sahal", 101, "CSE");
     r.setMarks(80, 85, 90);
     r.setBonus(5);
     r.displayResult();
