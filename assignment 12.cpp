@@ -3,29 +3,40 @@ using namespace std;
 
 class online_shopping {
 public:
-string item_name = "fossil b6 model watch";
-int quantity = 1;
-float price = 66.12;
+string item_name;
+int quantity;
+float price;
 };
 
 class shipping_details {
 public:
-float shipping_charge = 2.44;
+float shipping_charge = 5.99;
 };
 
 class bill : public online_shopping,public shipping_details {
 public:
-bill()
+void input(){
+    cout<<"enter item name"<<endl;
+    cin>>item_name;
+    cout<<"enter quantity"<<endl;
+    cin>>quantity;
+    cout<<"enter price"<<endl;
+    cin>>price;
+
+}
+void display()
 {
 float total = price + shipping_charge;
 cout<<"Item : "<<item_name<<endl;
-cout<<"Quantity : "<<quantity<<" nos"<<endl;
-cout<<"Price : $"<<price<<endl;
-cout<<"Shipping Charge : $"<<shipping_charge<<endl;
-cout<<"Total : $"<<total<<endl;
+cout<<"Quantity : "<<quantity<<endl;
+cout<<"Price : Rs. "<<price<<endl;
+cout<<"Shipping Charge : Rs. "<<shipping_charge<<endl;
+cout<<"Total : Rs. "<<total<<endl;
 }
 };
-int main()
-{
+int main(){
 bill b1;
+b1.input();
+b1.display();
 }
+
